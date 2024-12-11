@@ -71,8 +71,19 @@ function handleCellClick(event) {
 }
 
 function checkWinner() {
-    return winningConditions.some(combination => {
-        return combination.every(index => board[index] === currentPlayer);
+    for (let combination of winningConditions) {
+        if (combination.every(index => board[index] === currentPlayer)) {
+            highlightWinningCells(combination); // Highlight winning cells
+            return true;
+        }
+    }
+    return false;
+}
+
+function highlightWinningCells(combination) {
+    combination.forEach(index => {
+        const cell = document.querySelector(`[data-index='${index}']`);
+        cell.classList.add('winning');
     });
 }
 
@@ -83,6 +94,10 @@ function resetGame() {
     gameStatus.textContent = "Player X's Turn";
     gameStatus.className = '';
     initializeGrid();
+
+    // Remove winning animation
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach(cell => cell.classList.remove('winning'));
 }
 
 function toggleGameMode() {

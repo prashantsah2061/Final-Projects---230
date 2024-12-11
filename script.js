@@ -73,7 +73,7 @@ function handleCellClick(event) {
 function checkWinner() {
     for (let combination of winningConditions) {
         if (combination.every(index => board[index] === currentPlayer)) {
-            highlightWinningCells(combination); // Highlight winning cells
+            highlightWinningCells(combination); 
             return true;
         }
     }
@@ -95,7 +95,7 @@ function resetGame() {
     gameStatus.className = '';
     initializeGrid();
 
-    // Remove winning animation
+   
     const cells = document.querySelectorAll('.cell');
     cells.forEach(cell => cell.classList.remove('winning'));
 }

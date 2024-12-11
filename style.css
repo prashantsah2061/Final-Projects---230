@@ -58,3 +58,22 @@ button {
     color: rgb(159, 112, 23);
     font-weight: bold;
 }
+
+@keyframes winningGlow {
+    0% {
+        background-color: #28a745;
+        transform: scale(1);
+    }
+    50% {
+        background-color: #72d572;
+        transform: scale(1.1);
+    }
+    100% {
+        background-color: #28a745;
+        transform: scale(1);
+    }
+}
+
+.cell.winning {
+    animation: winningGlow 1s infinite;
+}

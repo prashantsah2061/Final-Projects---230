@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #63cbc9;
+}
+
+h1 {
+    margin: 20px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.cell {
+    background-color: #2880b7;
+    border: 1px solid #0da21a7f;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.cell.taken {
+    pointer-events: none;
+    color: #020700;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+.scores {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.winner {
+    color: rgb(1, 46, 21);
+    font-weight: bold;
+}
+
+.draw {
+    color: rgb(159, 112, 23);
+    font-weight: bold;
+}
